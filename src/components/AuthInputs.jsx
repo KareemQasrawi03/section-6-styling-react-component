@@ -45,7 +45,7 @@ export default function AuthInputs() {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className="button" onClick={handleLogin}>
+        <button className="px-4 py-2 font-semibold uppercase rounded text-stone-900 bg-amber-400 hover:bg-amber-500" onClick={handleLogin}>
           Sign In
         </button>
       </div>
