@@ -11,4 +11,22 @@ const Input = styled.input`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
-export default Input;
+const Lable = styled.label`
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+`;
+
+export default function CustomInput({label, invalid, ...props }) {
+    return (
+      <>
+        <Lable className={`label ${invalid ? "invalid" : ""}`}>{label}</Lable>
+        <Input {...props} className={invalid ? "invalid" : undefined} />
+      </>
+    );
+
+}

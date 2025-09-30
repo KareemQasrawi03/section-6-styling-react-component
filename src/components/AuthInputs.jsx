@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
-import Input from './Input';
+import CustomInput from "./Input";
 
 const Controls = styled.div`
   display: flex;
@@ -9,15 +9,6 @@ const Controls = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-const Lable = styled.label`
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #6b7280;
-`;
 
 
 export default function AuthInputs() {
@@ -44,26 +35,10 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <Controls>
         <p className="paragraph">
-          <Lable className={`label ${emailNotValid ? "invalid" : ""}`}>
-            Email
-          </Lable>
-          <Input
-            type="email"
-            className={emailNotValid ? "invalid" : undefined}
-            onChange={(event) => handleInputChange("email", event.target.value)}
-          />
+        <CustomInput label="Email" invalid={emailNotValid} type="email" onChange={(event) => handleInputChange("email", event.target.value)} />
         </p>
         <p className="paragraph">
-          <Lable className={`label ${passwordNotValid ? "invalid" : ""}`}>
-            Password
-          </Lable>
-          <Input
-            type="password"
-            className={passwordNotValid ? "invalid" : undefined}
-            onChange={(event) =>
-              handleInputChange("password", event.target.value)
-            }
-          />
+        <CustomInput label="Password" invalid={passwordNotValid} type="password" onChange={(event) => handleInputChange("password", event.target.value)} />
         </p>
       </Controls>
       <div className="actions">
